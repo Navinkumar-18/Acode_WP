@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+        }
+        .container{
+            width:50%;
+            margin:30px auto;
+            padding:20px;
+            border-radius:8px;
+            background-color: white;
+        }
+        .languages{
+            margin:50px;
+            width:100%;
+        }
+        h2{
+            text-align:center;
+            background-color: #004080;
+            color:white;
+        }
+        label{
+            margin-top:10px;
+            display:block;
+            font-weight:bold;
+        }
+        input,select,textarea{
+            width:80%;
+            padding:6px;
+            margin:10px;
+
+        }
+        .languages input{
+            width:auto;
+        }
+        button{
+            margin-top:15px;
+            padding:8px 15px;
+            background-color: #004080;
+            color:white;
+            border:none;
+            cursor:pointer;
+            display: block;
+        }
+
+    </style>
+
+    <script>
+        function validateForm(){
+            var name=document.getElementsById("name").value;
+            var namePattern=/^[a-zA-Z]$/;
+            if(namePattern.test(name) ||name.length<15){
+                alert("Enter name properly");
+                return false;
+            }
+
+            var password=document.getElementById("password").value;
+            if(password.length<8){
+                alert("Password must contains 8 characters");
+                return false;
+            }
+
+            var email=document.getElementById("email").value;
+            var emailPattern=/^[a-zA-Z0-9]+@[a-zA-Z0-9]+/[a-zA-Z];
+            if(emailPattern.test(email)){
+                alert("Enter email properly");
+                return false;
+            }
+
+            var phone=document.getElementById("phone").value;
+            var phonePattern=/^[0-9]{10}/;
+            if(phonePattern.test(phone)){
+                alert("Enter phone number properly");
+                return false;
+            }
+        alert("Registration Successfully");
+        return true;
+        
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form onClick="return validateForm()">
+            <label>Name </label>
+<input type="text" id="name"/>
+
+<label>email:</label>
+<input type="text" id="email"/>
+
+<label>phone:</label>
+<input type="text" id="phone"/>
+<br>
+<select>
+    <option>Days</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+
+<select>
+    <option >Month</option>
+    <option value="">Jan</option>
+    <option value="">Feb</option>
+    <option value="">Mar</option>
+</select>
+
+<select>
+    <option value="">Year</option>
+    <option value="">2000</option>
+    <option value="">2001</option>
+    <option value="">2002</option>
+</select>
+<br>
+<div class="languages">
+    <input type="checkbox" name="" id=""/>English
+    <input type="checkbox" name="" id=""/>Tamil
+    <input type="checkbox" name="" id=""/>Hindi
+</div>
+<br>
+<label for="">Address</label>
+<textarea name="" id="" rows="4" cols="30"></textarea>
+<button type="submit">Register</button>
+</form>
+ </div>
+    
+</body>
+</html>

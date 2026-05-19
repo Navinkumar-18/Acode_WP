@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Grocery Items</title>
+</head>
+<body>
+    <h5>Monthly grocery items</h5>
+    <form action="/" method="post">
+        <fieldset>
+            <legend>User Details</legend><br>
+            <label for="name">Full name :</label><br>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="phone">Phone number:</label><br>
+            <input type="text" name="phone" id="phone"><br>
+
+            <label for="address">Delievery Address:</label><br>
+            <textarea name="address" id="address" rows="4" cols="30"></textarea><br>
+<br>
+
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select items:</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" name="grocery" id="rice" value="rice">
+                    <label for="rice">Rice</label>
+                </li>
+
+                <li>
+                    <input type="checkbox" name="grocery" id="wheat" value="wheat">
+                    <label for="wheat">Wheat</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="grocery" id="sugar" value="sugar">
+                    <label for="sugar">Sugar</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="grocery" id="oil" value="oil">
+                    <label for="oil">Cooking Oil</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="grocery" id="vegetables" value="vegetables">
+                    <label for="vegetables"> Vegetables</label>
+                </li>
+            </ul>
+        </fieldset><br>
+        <input type="submit" >
+
+
+    </form>
+    
+</body>
+</html>

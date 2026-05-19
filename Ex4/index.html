@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #004080;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 6px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 8px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function calculateCGPA() {
+            // Read values using event handling
+            var s1 = parseFloat(document.getElementById("sub1").value);
+            var s2 = parseFloat(document.getElementById("sub2").value);
+            var s3 = parseFloat(document.getElementById("sub3").value);
+            var s4 = parseFloat(document.getElementById("sub4").value);
+            var s5 = parseFloat(document.getElementById("sub5").value);
+
+            if (isNaN(s1) || isNaN(s2) || isNaN(s3) || isNaN(s4) || isNaN(s5)) {
+                alert("Please enter grade points for all subjects");
+                return;
+            }
+
+            var cgpa = (s1 + s2 + s3 + s4 + s5) / 5;
+
+            document.getElementById("result").innerHTML =
+                "Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>CGPA Calculator</h2>
+
+        <label>Subject 1 Grade Point:</label>
+        <input type="text" id="sub1">
+
+        <label>Subject 2 Grade Point:</label>
+        <input type="text" id="sub2">
+
+        <label>Subject 3 Grade Point:</label>
+        <input type="text" id="sub3">
+
+        <label>Subject 4 Grade Point:</label>
+        <input type="text" id="sub4">
+
+        <label>Subject 5 Grade Point:</label>
+        <input type="text" id="sub5">
+
+        <!-- Event Handling using onclick -->
+        <button onclick="calculateCGPA()">Calculate CGPA</button>
+
+        <div class="result" id="result"></div>
+    </div>
+</body>
+</html>
